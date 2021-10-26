@@ -19,7 +19,6 @@ class LikedSerializer(serializers.ModelSerializer):
 class PostSerializer(serializers.ModelSerializer):
     get_likes = LikedSerializer(many=True, read_only=True)
     get_likes_count = serializers.IntegerField(read_only=True)
-    #user = serializers.PrimaryKeyRelatedField(read_only=True, default=serializers.CurrentUserDefault())
 
     class Meta:
         model = Post
